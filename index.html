@@ -16,7 +16,7 @@
             <div class="MyNav">
                 <img src="assets/logo.png" class="MyLogo">
                 <div class="MyNavCreate">
-                    <p style="margin-top: 12%;" onclick="pageForm(2)">New Article!</p>
+                    <p style="margin-top: 12%;" onclick="openCreateForm()">New Article!</p>
                 </div>
             </div>
         </div>
@@ -52,64 +52,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-8">
-                <div class="MyArticleContainer">
-                    <img src="assets/article/arc1.jpg" class="MyArticleImages">
-                    <div class="MyArticleContent">
-                        <div class="MyArticleTitle">Surprising NBA Offseason Trades to Start Thinking About Now</div>
-                        <div class="MyArticleDesc">mjjjyrjyrj</div>
-                    </div>
-
-                    <div class="MyArticleFooter">
-                        <div class=" MyArticleUserName">George Djoni
-                        </div>
-                        <img src="assets/user.png" class="MyArticleUserIcon">
-                        <div class="MyArticleUserName">7 Hours ago</div>
-                        <img src="assets/time.png" class="MyArticleUserIcon">
-                        <img src="assets/del.png" class="MyArticleUserIcon MyDelete">
-                        <img src="assets/update.png" class="MyArticleUserIcon MyDelete" style="margin-right: -1vh;">
-                    </div>
-                </div>
-                <div class="MyArticleContainer">
-                    <img src="assets/article/arc2.jpg" class="MyArticleImages">
-                    <div class="MyArticleTitle">Tyus Jones Takes over Point Guard Duties in Chicago</div>
-                    <div class="MyArticleFooter">
-                        <div class=" MyArticleUserName">Rony
-                        </div>
-                        <img src="assets/user.png" class="MyArticleUserIcon">
-                        <div class="MyArticleUserName">2 Days ago</div>
-                        <img src="assets/time.png" class="MyArticleUserIcon">
-                        <img src="assets/del.png" class="MyArticleUserIcon MyDelete">
-                        <img src="assets/update.png" class="MyArticleUserIcon MyDelete" style="margin-right: -1vh;">
-                    </div>
-                </div>
-                <div class="MyArticleContainer">
-                    <img src="assets/article/arc3.jpg" class="MyArticleImages">
-                    <div class="MyArticleTitle">Blazers Swap Anfernee Simons for Raptors' OG Anunoby</div>
-                    <div class="MyArticleFooter">
-                        <div class=" MyArticleUserName">Akhmad Ghafirin
-                        </div>
-                        <img src="assets/user.png" class="MyArticleUserIcon">
-                        <div class="MyArticleUserName">5 Days ago</div>
-                        <img src="assets/time.png" class="MyArticleUserIcon">
-                        <img src="assets/del.png" class="MyArticleUserIcon MyDelete">
-                        <img src="assets/update.png" class="MyArticleUserIcon MyDelete" style="margin-right: -1vh;">
-                    </div>
-                </div>
-                <div class="MyArticleContainer">
-                    <img src="assets/article/arc4.jpg" class="MyArticleImages">
-                    <div class="MyArticleTitle">Paul George Helps Knicks Join East's Elite</div>
-                    <div class="MyArticleFooter">
-                        <div class=" MyArticleUserName">Dody Agus Salim
-                        </div>
-                        <img src="assets/user.png" class="MyArticleUserIcon">
-                        <div class="MyArticleUserName">1 Week ago</div>
-                        <img src="assets/time.png" class="MyArticleUserIcon">
-                        <img src="assets/del.png" class="MyArticleUserIcon MyDelete">
-                        <img src="assets/update.png" class="MyArticleUserIcon MyDelete" style="margin-right: -1vh;">
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-8" , id="section-list"></div>
             <div class="col-md-4">
                 <div class="Categories">
                     <ol>
@@ -143,34 +86,78 @@
             </div>
         </div>
     </div>
-    <div id="pageForm">
+    <div id="pageCreateForm">
         <div class="row">
             <div class="MyNav">
                 <img src="assets/logo.png" class="MyLogo">
                 <div class="MyNavCreate">
-                    <p style="margin-top: 12%;" onclick="pageForm(1)">Go Home</p>
+                    <p style="margin-top: 12%;" onclick="openHome()">Go Home</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="MyFormContainer">
                 <div class="MyFormContent">
-                    <label class="MyFormLabel">Article Title</label>
-                    <input type="text" class="MyFormInput">
+                    <label class="MyFormLabel">Title</label>
+                    <input id="input-create-title" type="text" class="MyFormInput" placeholder="Enter title here">
+                </div>
+                <div class="MyFormContent">
+                    <label class="MyFormLabel">Description</label>
+                    <input id="input-create-desc" type="text" class="MyFormInput" placeholder="Enter description here">
                 </div>
                 <div class=" MyFormContent">
-                    <label class="MyFormLabel">Upload Image</label>
-                    <input type="text" class="MyFormInput">
+                    <label class="MyFormLabel">Image</label>
+                    <input id="input-create-img" type="text" class="MyFormInput" placeholder="Enter link image here">
                 </div>
                 <div class="MyFormContent">
                     <label class="MyFormLabel">Upload Time</label>
-                    <input type="text" class="MyFormInput">
+                    <input id="input-create-time" type="text" class="MyFormInput" placeholder="Enter upload time here">
                 </div>
                 <div class="MyFormContent">
                     <label class="MyFormLabel">User Upload</label>
-                    <input type="text" class="MyFormInput">
+                    <input id="input-create-user" type="text" class="MyFormInput" placeholder="Enter user upload here">
                 </div>
-                <button class="MyFormButton">Submit</button>
+                <button class="MyFormButton" , id="btn-create-post">Submit</button>
+            </div>
+        </div>
+        <div class="row" style="margin: 0px;">
+            <div class="MyFooter">
+                <p class="MyFooterText">&copy;Hackletic.com</p>
+            </div>
+        </div>
+    </div>
+    <div id="pageUpdateForm">
+        <div class="row">
+            <div class="MyNav">
+                <img src="assets/logo.png" class="MyLogo">
+                <div class="MyNavCreate">
+                    <p style="margin-top: 12%;" onclick="openHome()">Go Home</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="MyFormContainer">
+                <div class="MyFormContent">
+                    <label class="MyFormLabel">Title</label>
+                    <input id="input-update-title" type="text" class="MyFormInput" placeholder="Enter title here">
+                </div>
+                <div class="MyFormContent">
+                    <label class="MyFormLabel">Description</label>
+                    <input id="input-update-desc" type="text" class="MyFormInput" placeholder="Enter description here">
+                </div>
+                <div class=" MyFormContent">
+                    <label class="MyFormLabel">Image</label>
+                    <input id="input-update-img" type="text" class="MyFormInput" placeholder="Enter link image here">
+                </div>
+                <div class="MyFormContent">
+                    <label class="MyFormLabel">Upload Time</label>
+                    <input id="input-update-time" type="text" class="MyFormInput" placeholder="Enter upload time here">
+                </div>
+                <div class="MyFormContent">
+                    <label class="MyFormLabel">User Upload</label>
+                    <input id="input-update-user" type="text" class="MyFormInput" placeholder="Enter user upload here">
+                </div>
+                <button class="MyFormButton" id="btn-update-post">Update</button>
             </div>
         </div>
         <div class="row" style="margin: 0px;">
@@ -181,6 +168,7 @@
     </div>
 </body>
 <script src="slide.js"></script>
-<script src="selector.js"></script>
+<!-- <script src="selector.js"></script> -->
+<script src="index.js"></script>
 
 </html>
